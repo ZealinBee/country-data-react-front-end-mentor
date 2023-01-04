@@ -1,0 +1,10 @@
+@import './variables';
+
+nav {
+    display:flex;
+    justify-content: space-between;
+    padding:1em 2em;
+    background-color: $dark-blue;
+    color:white;
+    
+}

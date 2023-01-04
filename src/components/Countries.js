@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Country from "./Country";
+import "../styles/countries.scss"
 
 function Countries() {
   const [data, setData] = useState(null);
@@ -22,7 +23,7 @@ function Countries() {
 
 
   return (
-    <>
+    <main>
       {data.map((item) => {
         return (
           <Country
@@ -32,12 +33,13 @@ function Countries() {
           capital={item.capital}
           subRegion={item.subregion}
           domain={item.tld}
+          flagImg={item.flags.png}
           // commonName = {item.name.nativeName.eng.common}
         ></Country>
         )
         
       })}
-    </>
+    </main>
   );
 }
 

@@ -1,0 +1,29 @@
+@import "./variables";
+
+form {
+  width:130px;
+  position:relative;
+
+  select {
+    background: $dark-blue;
+    // padding: 0.75em 1.25em;
+    appearance: none;
+    outline: none;
+    border: none;
+    color: white;
+    width:130px;
+  }
+  .arrow-wrapper {
+    width:20px;
+    pointer-events: none;
+    position:absolute;
+    top:0;
+    right:10px;
+    img {
+        width:20px;
+        pointer-events: none;
+
+    }
+}
+ 
+}

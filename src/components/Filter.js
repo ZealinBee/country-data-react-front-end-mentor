@@ -1,5 +1,6 @@
-import React from 'react'
-
+import React from "react";
+import "../styles/filter.scss";
+import arrow from "../assets/arrow.svg";
 function Filter() {
   return (
     <form>
@@ -11,8 +12,11 @@ function Filter() {
         <option value="">Europe</option>
         <option value="">Oceania</option>
       </select>
+      <div className="arrow-wrapper">
+        <img src={arrow} alt="" />
+      </div>
     </form>
-  )
+  );
 }
 
-export default Filter
+export default Filter;

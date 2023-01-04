@@ -1,0 +1,39 @@
+@import "./variables";
+
+.country {
+  display: flex;
+  flex-direction: column;
+  background-color: $dark-blue;
+  text-align: left;
+  font-size: 0.8rem;
+  padding-bottom:1.5em;
+  .flag-wrapper {
+    width: 100%;
+    cursor: pointer;
+    img {
+      width: 100%;
+      object-fit: cover;
+      
+      @media (min-width:800px) {
+        aspect-ratio: 16/9;
+      }
+    }
+  }
+
+  h2 {
+    color: white;
+    font-size: 1rem;
+    margin: 0.75em 1em;
+    margin-top:1.25em;
+    cursor: pointer;
+  }
+
+  p {
+    color: white;
+    font-weight: 600;
+    margin: 0.2em 1em;
+    span {
+      font-weight: 300;
+    }
+  }
+}

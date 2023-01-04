@@ -4,7 +4,7 @@ import '../styles/nav.scss'
 function Nav() {
   return (
     <nav>
-      <h1>Where in the world?</h1>
+      <h2>Where in the world?</h2>
       <button>Dark Mode</button>
     </nav>
   )
