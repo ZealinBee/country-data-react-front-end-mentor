@@ -4,11 +4,26 @@ nav {
     display:flex;
     justify-content: space-between;
     padding:1em 2em;
-    background-color: $dark-blue;
-    color:white;
+    background-color: var(--dark-blue);
+    color:var(--white);
     position:fixed;
     top:0;
     width:100%;
     z-index:999;
-    
+    button {
+        background:transparent;
+        border:none;
+        font-weight:600;
+        color:var(--white);
+        margin-right:2em;
+        font-size:0.9rem;
+        cursor:pointer; 
+        transition: all 0.2s ease-in-out;
+        span{
+            margin-left:0.5em;
+        }
+        &:hover {
+            opacity:0.8;
+        }
+    }
 }

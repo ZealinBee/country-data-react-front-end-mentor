@@ -1,20 +1,32 @@
-@import './variables';
+@import "./variables";
 
 * {
-    font-family:$main-font;
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+  font-family: $main-font;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background:$very-dark-blue;
+  --dark-blue: hsl(209, 23%, 22%);
+  --very-dark-blue: hsl(207, 26%, 17%);
+  --very-dark-blue-light-mode: hsl(200, 15%, 8%);
+  --dark-gray: hsl(0, 0%, 52%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --white: white;
+  background: var(--very-dark-blue);
+}
+
+body.dark {
+  --dark-blue: white;
+  --very-dark-blue: white;
+  --white: hsl(200, 15%, 8%);
 }
 
 img {
-    display:block;
+  display: block;
 }
 
 .over-flow {
-    overflow-y: hidden;
+  overflow-y: hidden;
 }

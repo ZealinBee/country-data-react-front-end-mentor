@@ -5,12 +5,12 @@ form {
   position:relative;
 
   select {
-    background: $dark-blue;
+    background:var(--dark-blue);
     // padding: 0.75em 1.25em;
     appearance: none;
     outline: none;
     border: none;
-    color: white;
+    color: var(--white);
     width:130px;
   }
   .arrow-wrapper {
