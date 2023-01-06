@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from "react";
 import "../styles/nav.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBorderStyle, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faMoon } from "@fortawesome/free-solid-svg-icons";
 
 function Nav() {
   const [darkMode, setDarkMode] = useState(true);

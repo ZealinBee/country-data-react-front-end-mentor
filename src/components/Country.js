@@ -35,7 +35,7 @@ function Country({
           Region: <span> {region}</span>
         </p>
         <p class="country-p">
-          Capital: <span> {population}</span>
+          Capital: <span> {capital}</span>
         </p>
       </div>
 

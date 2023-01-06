@@ -11,16 +11,19 @@ body {
   --dark-blue: hsl(209, 23%, 22%);
   --very-dark-blue: hsl(207, 26%, 17%);
   --very-dark-blue-light-mode: hsl(200, 15%, 8%);
-  --dark-gray: hsl(0, 0%, 52%);
+  --dark-gray: hsla(0, 0%, 52%, 0.447);
   --very-light-gray: hsl(0, 0%, 98%);
   --white: white;
+  --box-shadow-dark-blue: var(--dark-blue);
   background: var(--very-dark-blue);
 }
 
 body.dark {
-  --dark-blue: white;
-  --very-dark-blue: white;
+  --dark-blue: hsl(0, 0%, 98%);
+  --very-dark-blue: hsl(0, 0%, 98%);
   --white: hsl(200, 15%, 8%);
+  --box-shadow-dark-blue: var(--dark-gray);
+
 }
 
 img {

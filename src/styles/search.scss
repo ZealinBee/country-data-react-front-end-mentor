@@ -1,3 +1,31 @@
-input {
-    margin-top:65px;
+.input-wrapper {
+  margin-top: 5rem;
+  margin-left:1.5rem;
+  background-color: var(--dark-blue);
+  position: relative;
+  width: 350px;
+  box-shadow: 0 0 6px var(--box-shadow-dark-blue);
+
+  input {
+    background-color: var(--dark-blue);
+    border: none;
+    padding: 1em 0.5em 1em 3em;
+    width: 350px;
+    outline:none;
+    color:var(--white);
+    font-size:0.9rem;
+    &::placeholder {
+      color: var(--white);
+    }
+  }
+
+  svg {
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    left:15px;
+    path {
+        fill:var(--white);
+    }
+  }
 }

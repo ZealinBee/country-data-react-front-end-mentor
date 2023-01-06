@@ -1,12 +1,23 @@
-import React from 'react'
-import "../styles/search.scss"
+import React from "react";
+import "../styles/search.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-function Search() {
+function Search({ search, setSearch,searchOnChangeHandler }) {
   return (
     <>
-      <input type="search" name="countrySearch" id="country-search" />
+      <div className="input-wrapper">
+        <FontAwesomeIcon icon={faMagnifyingGlass} />
+        <input
+          type="search"
+          name="countrySearch"
+          id="country-search"
+          placeholder="Search for a country... "
+          onChange={searchOnChangeHandler}
+        />
+      </div>
     </>
-  )
+  );
 }
 
-export default Search
+export default Search;
