@@ -3,7 +3,7 @@ import "../styles/search.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-function Search({ search, setSearch,searchOnChangeHandler }) {
+function Search({ searchOnChangeHandler }) {
   return (
     <>
       <div className="input-wrapper">

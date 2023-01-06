@@ -1,71 +1,56 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Country from "./Country";
 import "../styles/countries.scss";
 
-function Countries({ search, setSearch }) {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
+function Countries({
+  search,
+  setSearch,
+  countryRegion,
+  setCountryRegion,
+  data,
+  setData,
+  loading,
+  setLoading,
+}) {
   const [showCountries, setShowCountries] = useState(true);
-  
-
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch("https://restcountries.com/v3.1/all");
-      const json = await response.json();
-      setData(json);
-      setLoading(false);
-    }
-    fetchData();
-  }, []);
 
   if (loading) {
     return <div>Loading...</div>;
   }
 
-  const filteredCountries = data.filter((item) =>
-    item.name.common.toLowerCase().includes(search.toLowerCase()) 
-  );
-
   return (
     <>
       <main>
-        {search === ""
-          ? data.map((item) => {
-              return (
-                <Country
-                  showCountries={showCountries}
-                  setShowCountries={setShowCountries}
-                  name={item.name.common}
-                  population={item.population}
-                  region={item.region}
-                  capital={item.capital}
-                  subRegion={item.subregion}
-                  domain={item.tld}
-                  flagImg={item.flags.png}
-                  commonName={"do this later"}
-                  currencies={"do this later"}
-                  languages={"do this later"}
-                ></Country>
-              );
-            })
-          : filteredCountries.map((item) => {
-              return (
-                <Country
-                  showCountries={showCountries}
-                  setShowCountries={setShowCountries}
-                  name={item.name.common}
-                  population={item.population}
-                  region={item.region}
-                  capital={item.capital}
-                  subRegion={item.subregion}
-                  domain={item.tld}
-                  flagImg={item.flags.png}
-                  commonName={"do this later"}
-                  currencies={"do this later"}
-                  languages={"do this later"}
-                ></Country>
-              );
-            })}
+        {data.map((item) => {
+          if (item.languages && typeof item.languages === "object") {
+            let languages = Object.values(item.languages);
+            var languagesString = languages.join(", ");
+          }
+          if (item.currencies && typeof item.currencies === "object") {
+            let currencies = Object.entries(item.currencies);
+            currencies.forEach((value) => {
+              if (typeof value.name === "object") {
+              }
+            });
+          }
+
+          return (
+            <Country
+              showCountries={showCountries}
+              setShowCountries={setShowCountries}
+              name={item.name.common}
+              population={item.population}
+              region={item.region}
+              capital={item.capital}
+              subRegion={item.subregion}
+              domain={item.tld}
+              flagImg={item.flags.png}
+              commonName={"do this later"}
+              currencies={"do this later"}
+              languages={languagesString}
+            ></Country>
+          );
+        })}
       </main>
     </>
   );
