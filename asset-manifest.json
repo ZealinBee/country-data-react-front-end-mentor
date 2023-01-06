@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/country-data-react-front-end-mentor/static/css/main.9158737a.css",
-    "main.js": "/country-data-react-front-end-mentor/static/js/main.53c5a384.js",
+    "main.css": "/country-data-react-front-end-mentor/static/css/main.15f154d3.css",
+    "main.js": "/country-data-react-front-end-mentor/static/js/main.a57aba88.js",
     "static/js/787.862c3719.chunk.js": "/country-data-react-front-end-mentor/static/js/787.862c3719.chunk.js",
     "index.html": "/country-data-react-front-end-mentor/index.html",
     "static/media/arrow.svg": "/country-data-react-front-end-mentor/static/media/arrow.27ebe472a5648fab6f62bc222bbaf0b3.svg",
-    "main.9158737a.css.map": "/country-data-react-front-end-mentor/static/css/main.9158737a.css.map",
-    "main.53c5a384.js.map": "/country-data-react-front-end-mentor/static/js/main.53c5a384.js.map",
+    "main.15f154d3.css.map": "/country-data-react-front-end-mentor/static/css/main.15f154d3.css.map",
+    "main.a57aba88.js.map": "/country-data-react-front-end-mentor/static/js/main.a57aba88.js.map",
     "787.862c3719.chunk.js.map": "/country-data-react-front-end-mentor/static/js/787.862c3719.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9158737a.css",
-    "static/js/main.53c5a384.js"
+    "static/css/main.15f154d3.css",
+    "static/js/main.a57aba88.js"
   ]
 }
