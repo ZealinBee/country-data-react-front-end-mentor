@@ -1,0 +1,12 @@
+.filter {
+    display:flex;
+    justify-content: space-between;
+    margin-top:5.5rem;
+    margin-bottom:2em;
+}
+
+@media(max-width:950px) {
+    .filter {
+        flex-direction: column;
+    }
+}

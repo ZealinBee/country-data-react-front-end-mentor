@@ -1,5 +1,4 @@
 .input-wrapper {
-  margin-top: 5rem;
   margin-left:1.5rem;
   background-color: var(--dark-blue);
   position: relative;
@@ -26,6 +25,15 @@
     left:15px;
     path {
         fill:var(--white);
+    }
+  }
+}
+
+@media(max-width:950px) {
+  .input-wrapper {
+    width:80%;
+    input {
+      width:100%;
     }
   }
 }

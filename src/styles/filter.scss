@@ -1,29 +1,36 @@
 @import "./variables";
 
 form {
-  width:130px;
   position:relative;
-
+  display:flex;
+  margin-right:2em;
+  box-shadow: 0 0 6px var(--box-shadow-dark-blue);
+  width:180px;
   select {
+    width:180px;
     background:var(--dark-blue);
-    // padding: 0.75em 1.25em;
     appearance: none;
     outline: none;
     border: none;
     color: var(--white);
-    width:130px;
+    padding:1.2em 1.5em;
   }
   .arrow-wrapper {
-    width:20px;
+    font-size:0.8em;
     pointer-events: none;
     position:absolute;
-    top:0;
-    right:10px;
-    img {
-        width:20px;
-        pointer-events: none;
-
+    top:50%;
+    right:15px;
+    transform: translateY(-50%);
+    path {
+      fill : var(--white);
     }
 }
- 
+}
+
+@media(max-width:950px) {
+  form {
+    margin-top:2em;
+    margin-left:1.5em;
+  }
 }

@@ -16,6 +16,7 @@ body {
   --white: white;
   --box-shadow-dark-blue: var(--dark-blue);
   background: var(--very-dark-blue);
+  transition: all 0.1s ease-in-out;
 }
 
 body.dark {

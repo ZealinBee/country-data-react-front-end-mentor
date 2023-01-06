@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/individualCountry.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+
 
 function IndividualCountry({
   name,
@@ -26,7 +29,9 @@ function IndividualCountry({
     <>
       {showDetailedCountries && (
         <div class="detailed-country">
-          <button onClick={toggleCurrentCountryHandler}>Back</button>
+          <button onClick={toggleCurrentCountryHandler}>
+          <FontAwesomeIcon icon={faArrowLeft} />
+            Back</button>
           <div className="info">
             <div className="info-img-wrapper">
               <img src={flagImg} alt="" />
@@ -53,7 +58,7 @@ function IndividualCountry({
                     {subRegion}
                   </p>
                   <p>
-                    <span>Capital: </span>
+                    <span className="capital" >Capital: </span>
                     {capital}
                   </p>
                 </div>
