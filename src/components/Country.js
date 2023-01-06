@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import IndividualCountry from "./IndividualCountry";
-import "../styles/country.scss"
+import "../styles/country.scss";
 
 function Country({
   name,
@@ -11,21 +11,38 @@ function Country({
   domain,
   commonName,
   flagImg,
+  currencies,
+  languages,
 }) {
   const [showDetailedCountries, setShowDetailedCountries] = useState(false);
 
+  function IndividualCountryHandler() {
+    setShowDetailedCountries(true);
+    document.body.classList.add('over-flow')
+  }
+
   return (
-    <div class="country">
-      <div className="flag-wrapper">
-        <img src={flagImg} alt="" />
+    <>
+      <div class="country">
+        <div className="flag-wrapper" onClick={IndividualCountryHandler}>
+          <img src={flagImg} alt="" />
+        </div>
+        <h2 onClick={IndividualCountryHandler}>{name}</h2>
+        <p class="country-p">
+          Population: <span> {population}</span>
+        </p>
+        <p class="country-p">
+          Region: <span> {region}</span>
+        </p>
+        <p class="country-p">
+          Capital: <span> {population}</span>
+        </p>
       </div>
-      <h2 onClick={() => setShowDetailedCountries(true)}>{name}</h2>
-      <p>Population: <span> {population}</span></p>
-      <p>Region: <span> {region}</span></p>
-      <p>Capital: <span> {population}</span></p>
-   
+
       {showDetailedCountries && (
         <IndividualCountry
+          showDetailedCountries={showDetailedCountries}
+          setShowDetailedCountries={setShowDetailedCountries}
           name={name}
           population={population}
           region={region}
@@ -33,9 +50,12 @@ function Country({
           subRegion={subRegion}
           domain={domain}
           commonName={commonName}
+          flagImg={flagImg}
+          currencies={currencies}
+          languages={languages}
         ></IndividualCountry>
       )}
-    </div>
+    </>
   );
 }
 

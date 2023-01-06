@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Country from "./Country";
-import "../styles/countries.scss"
+import "../styles/countries.scss";
 
 function Countries() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [showCountries, setShowCountries] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
@@ -20,26 +21,29 @@ function Countries() {
     return <div>Loading...</div>;
   }
 
-
-
   return (
-    <main>
-      {data.map((item) => {
-        return (
-          <Country
-          name={item.name.common}
-          population={item.population}
-          region={item.region}
-          capital={item.capital}
-          subRegion={item.subregion}
-          domain={item.tld}
-          flagImg={item.flags.png}
-          // commonName = {item.name.nativeName.eng.common}
-        ></Country>
-        )
-        
-      })}
-    </main>
+    <>
+      <main>
+        {data.map((item) => {
+          return (
+            <Country
+              showCountries={showCountries}
+              setShowCountries={setShowCountries}
+              name={item.name.common}
+              population={item.population}
+              region={item.region}
+              capital={item.capital}
+              subRegion={item.subregion}
+              domain={item.tld}
+              flagImg={item.flags.png}
+              commonName={"do this later"}
+              currencies={"do this later"}
+              languages={"do this later"}
+            ></Country>
+          );
+        })}
+      </main>
+    </>
   );
 }
 
