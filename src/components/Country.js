@@ -13,6 +13,7 @@ function Country({
   flagImg,
   currencies,
   languages,
+  borders,
 }) {
   const [showDetailedCountries, setShowDetailedCountries] = useState(false);
 
@@ -23,18 +24,18 @@ function Country({
 
   return (
     <>
-      <div class="country">
+      <div className="country">
         <div className="flag-wrapper" onClick={IndividualCountryHandler}>
           <img src={flagImg} alt="" />
         </div>
         <h2 onClick={IndividualCountryHandler}>{name}</h2>
-        <p class="country-p">
+        <p className="country-p">
           Population: <span> {population}</span>
         </p>
-        <p class="country-p">
+        <p className="country-p">
           Region: <span> {region}</span>
         </p>
-        <p class="country-p">
+        <p className="country-p">
           Capital: <span> {capital}</span>
         </p>
       </div>
@@ -53,6 +54,7 @@ function Country({
           flagImg={flagImg}
           currencies={currencies}
           languages={languages}
+          borders={borders}
         ></IndividualCountry>
       )}
     </>

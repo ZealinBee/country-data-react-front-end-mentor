@@ -3,7 +3,6 @@ import "../styles/individualCountry.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-
 function IndividualCountry({
   name,
   population,
@@ -16,22 +15,21 @@ function IndividualCountry({
   currencies,
   languages,
   showDetailedCountries,
-  setShowDetailedCountries
+  setShowDetailedCountries,
+  borders,
 }) {
-
   function toggleCurrentCountryHandler() {
     setShowDetailedCountries(false);
-    document.body.classList.remove('over-flow')
-
+    document.body.classList.remove("over-flow");
   }
-
   return (
     <>
       {showDetailedCountries && (
         <div class="detailed-country">
-          <button onClick={toggleCurrentCountryHandler}>
-          <FontAwesomeIcon icon={faArrowLeft} />
-            Back</button>
+          <button onClick={toggleCurrentCountryHandler} className="back-button">
+            <FontAwesomeIcon icon={faArrowLeft} />
+            Back
+          </button>
           <div className="info">
             <div className="info-img-wrapper">
               <img src={flagImg} alt="" />
@@ -58,7 +56,7 @@ function IndividualCountry({
                     {subRegion}
                   </p>
                   <p>
-                    <span className="capital" >Capital: </span>
+                    <span className="capital">Capital: </span>
                     {capital}
                   </p>
                 </div>
@@ -77,7 +75,19 @@ function IndividualCountry({
                   </p>
                 </div>
               </div>
-              <div className="facts-neighboring-country-wrapper"></div>
+              {Array.isArray(borders) ? (
+                <div className="facts-neighboring-country-wrapper">
+                  <h3>Border Countries:</h3>
+                  <div className="border-countries">
+                    {borders.map((border) => (
+                      <button className="border-country">{border}</button>
+                    ))}
+                  </div>
+                 
+                </div>
+              ) : (
+                <div></div>
+              )}
             </div>
           </div>
         </div>

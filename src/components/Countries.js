@@ -1,17 +1,10 @@
 import React, { useState } from "react";
 import Country from "./Country";
 import "../styles/countries.scss";
+import uuid from 'react-uuid';
 
-function Countries({
-  search,
-  setSearch,
-  countryRegion,
-  setCountryRegion,
-  data,
-  setData,
-  loading,
-  setLoading,
-}) {
+
+function Countries({ data, loading }) {
   const [showCountries, setShowCountries] = useState(true);
 
   if (loading) {
@@ -27,15 +20,37 @@ function Countries({
             var languagesString = languages.join(", ");
           }
           if (item.currencies && typeof item.currencies === "object") {
-            let currencies = Object.entries(item.currencies);
+            let currencies = Object.values(item.currencies);
+            var listOfCurrencies = []
             currencies.forEach((value) => {
-              if (typeof value.name === "object") {
-              }
+              listOfCurrencies.push(value.name)
+            })
+          }
+
+          if (
+            item.name.nativeName &&
+            typeof item.name.nativeName === "object"
+          ) {
+            var nativeName = Object.values(item.name.nativeName);
+            nativeName = nativeName[0].official;
+          }
+
+          if (Array.isArray(item.borders)) {
+            const listOfBorders = [];
+            var finalListOfBorders;
+            item.borders.forEach((border) => {
+              const fixedBorder = border.slice(0, 2);
+              const regionNamesInEnglish = new Intl.DisplayNames(["en"], {
+                type: "region",
+              });
+              listOfBorders.push(regionNamesInEnglish.of(fixedBorder));
             });
+            finalListOfBorders = listOfBorders.slice(0, 8);
           }
 
           return (
             <Country
+            key={uuid()}
               showCountries={showCountries}
               setShowCountries={setShowCountries}
               name={item.name.common}
@@ -45,9 +60,10 @@ function Countries({
               subRegion={item.subregion}
               domain={item.tld}
               flagImg={item.flags.png}
-              commonName={"do this later"}
-              currencies={"do this later"}
+              commonName={nativeName}
+              currencies={listOfCurrencies}
               languages={languagesString}
+              borders={finalListOfBorders}
             ></Country>
           );
         })}

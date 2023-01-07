@@ -23,13 +23,11 @@ function Home() {
   function countryFilteringHandler() {
     let filteredCountries = originalData;
     if (countryRegion !== "") {
-      console.log(countryRegion);
       filteredCountries = filteredCountries.filter(
         (country) => country.region === countryRegion
       );
     }
     if (search !== "") {
-      console.log(search);
       filteredCountries = filteredCountries.filter((country) => {
         return country.name.common.toLowerCase().includes(search.toLowerCase());
       });
