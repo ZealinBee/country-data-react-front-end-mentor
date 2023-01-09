@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Country from "./Country";
 import "../styles/countries.scss";
-import uuid from 'react-uuid';
-
+import uuid from "react-uuid";
+import iocCountries from "../assets/IOCtoCountry.json";
 
 function Countries({ data, loading }) {
   const [showCountries, setShowCountries] = useState(true);
@@ -21,10 +21,10 @@ function Countries({ data, loading }) {
           }
           if (item.currencies && typeof item.currencies === "object") {
             let currencies = Object.values(item.currencies);
-            var listOfCurrencies = []
+            var listOfCurrencies = [];
             currencies.forEach((value) => {
-              listOfCurrencies.push(value.name)
-            })
+              listOfCurrencies.push(value.name);
+            });
           }
 
           if (
@@ -39,18 +39,16 @@ function Countries({ data, loading }) {
             const listOfBorders = [];
             var finalListOfBorders;
             item.borders.forEach((border) => {
-              const fixedBorder = border.slice(0, 2);
-              const regionNamesInEnglish = new Intl.DisplayNames(["en"], {
-                type: "region",
-              });
-              listOfBorders.push(regionNamesInEnglish.of(fixedBorder));
+              if (typeof iocCountries[border] !== "undefined") {
+                listOfBorders.push(iocCountries[border]);
+              }
             });
             finalListOfBorders = listOfBorders.slice(0, 8);
           }
 
           return (
             <Country
-            key={uuid()}
+              key={uuid()}
               showCountries={showCountries}
               setShowCountries={setShowCountries}
               name={item.name.common}

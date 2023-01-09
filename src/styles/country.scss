@@ -6,31 +6,36 @@
   background-color: var(--dark-blue);
   text-align: left;
   font-size: 0.8rem;
-  padding-bottom:1.5em;
+  padding-bottom: 1.5em;
   box-shadow: 0 0 6px var(--box-shadow-dark-blue);
   border-radius: 5px;
 
   .flag-wrapper {
     width: 100%;
     cursor: pointer;
+    margin-bottom: 1rem;
     img {
       width: 100%;
       object-fit: cover;
       border-radius: 5px 5px 0 0;
-      
-      @media (min-width:800px) {
+
+      @media (min-width: 800px) {
         aspect-ratio: 16/9;
       }
     }
-    
   }
 
   h2 {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .h2-link {
     color: var(--white);
-    font-size: 1rem;
-    margin: 0.75em 1rem;
-    margin-top:1.25em;
+    font-size: 1.2rem;
+    margin: 0 1rem;
     cursor: pointer;
+    text-decoration: none;
   }
 
   .country-p {
