@@ -20,6 +20,10 @@ function Home() {
     setCountryRegion(e.target.value);
   }
 
+  function showAllCountryHandler() {
+    setData(originalData);
+  }
+
   function countryFilteringHandler() {
     let filteredCountries = originalData;
     if (countryRegion !== "") {
@@ -66,6 +70,7 @@ function Home() {
         ></Filter>
       </div>
       <Countries
+      showAllCountryHandler={showAllCountryHandler}
         setSearch={setSearch}
         search={search}
         countryRegion={countryRegion}

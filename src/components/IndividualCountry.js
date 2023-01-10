@@ -16,6 +16,7 @@ function IndividualCountry({
   currencies,
   languages,
   borders,
+  showAllCountryHandler
 }) {
 
   const history = useHistory()
@@ -85,7 +86,7 @@ function IndividualCountry({
                 <div className="border-countries">
                   {borders.map((border) => (
                     <button>
-                      <Link to={`/countries/${border}`} class="border-country">{border}</Link>
+                      <Link to={`/countries/${border}`} class="border-country" onClick={showAllCountryHandler}>{border} </Link>
                     </button>
                   ))}
                 </div>

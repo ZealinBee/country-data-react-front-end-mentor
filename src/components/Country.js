@@ -15,6 +15,7 @@ function Country({
   currencies,
   languages,
   borders,
+  showAllCountryHandler
 }) {
   const [showDetailedCountries, setShowDetailedCountries] = useState(false);
   // useEffect(() => {
@@ -64,6 +65,7 @@ function Country({
             currencies={currencies}
             languages={languages}
             borders={borders}
+            showAllCountryHandler={showAllCountryHandler}
           ></IndividualCountry>
         )}
       ></Route>

@@ -4,7 +4,7 @@ import "../styles/countries.scss";
 import uuid from "react-uuid";
 import iocCountries from "../assets/IOCtoCountry.json";
 
-function Countries({ data, loading }) {
+function Countries({ data, loading ,showAllCountryHandler}) {
   const [showCountries, setShowCountries] = useState(true);
 
   if (loading) {
@@ -62,6 +62,7 @@ function Countries({ data, loading }) {
               currencies={listOfCurrencies}
               languages={languagesString}
               borders={finalListOfBorders}
+              showAllCountryHandler={showAllCountryHandler}
             ></Country>
           );
         })}
