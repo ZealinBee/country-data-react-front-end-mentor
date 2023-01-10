@@ -33,8 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://zealinbee.github.io/country-data-react-front-end-mentor/)
+- Live Site URL: [https://zealinbee.github.io/country-data-react-front-end-mentor/]
 
 ## My process
 
@@ -46,5 +45,5 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- Website - [Zhiyuan Liu](https://zealinbee.github.io/portfolio-v1/com)
+- Website - [Zhiyuan Liu](https://zealinbee.github.io/portfolio-v1)
 - Frontend Mentor - [@ZealinBee](https://www.frontendmentor.io/profile/ZealinBee)
