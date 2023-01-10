@@ -52,7 +52,7 @@ function Countries({ data, loading ,showAllCountryHandler}) {
               showCountries={showCountries}
               setShowCountries={setShowCountries}
               name={item.name.common}
-              population={item.population}
+              population={item.population.toLocaleString()}
               region={item.region}
               capital={item.capital}
               subRegion={item.subregion}
