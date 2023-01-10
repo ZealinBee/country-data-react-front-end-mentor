@@ -25,8 +25,6 @@ function IndividualCountry({
     history.goBack()
   }
 
-// document.body.style.overflow = "hidden";
-
 
   return (
     <>

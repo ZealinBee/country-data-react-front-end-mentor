@@ -4,6 +4,7 @@ import Countries from "./Countries";
 import Filter from "./Filter";
 import Search from "./Search";
 import "../styles/home.scss";
+import { faBorderStyle } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
   const [data, setData] = useState(null);
@@ -22,6 +23,8 @@ function Home() {
 
   function showAllCountryHandler() {
     setData(originalData);
+    document.body.classList.remove("overflow-hidden")
+    console.log('huh?')
   }
 
   function countryFilteringHandler() {

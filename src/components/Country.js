@@ -18,10 +18,10 @@ function Country({
   showAllCountryHandler
 }) {
   const [showDetailedCountries, setShowDetailedCountries] = useState(false);
-  // useEffect(() => {
-  //   document.body.style.overflow = "hidden";
 
-  // },)
+  function addOverflow() {
+    document.body.classList.add("overflow-hidden")
+  }
  
   return (
     <>
@@ -32,7 +32,7 @@ function Country({
           </Link>
         </div>
         <h2>
-          <Link to={`/countries/${name}`} class="h2-link">
+          <Link to={`/countries/${name}`} class="h2-link" onClick={addOverflow}>
             {" "}
             {name}
           </Link>

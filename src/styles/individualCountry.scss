@@ -1,15 +1,16 @@
 @import "./variables";
 
 .detailed-country {
-  position: absolute;
   position: fixed;
   background-color: var(--very-dark-blue);
   width: 100%;
-  height: 100%;
   top: 62px;
   left: 0;
   display: flex;
+  height:100vh;
+  overflow-y: auto;
   flex-direction: column;
+  padding-bottom:5rem;
   .back-button {
     background-color: var(--dark-blue);
     border: none;
